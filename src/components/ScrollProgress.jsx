@@ -1,0 +1,16 @@
+import { motion } from 'framer-motion';
+import { useScrollProgress } from '../hooks/useScrollProgress';
+
+export default function ScrollProgress() {
+  const scaleX = useScrollProgress();
+
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-[2px] z-[9998] origin-left"
+      style={{
+        scaleX,
+        background: 'linear-gradient(90deg, #915EFF, #00D9FF)',
+      }}
+    />
+  );
+}
