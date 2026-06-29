@@ -1,78 +1,52 @@
 import { motion } from 'framer-motion';
 
+const BADGE_STYLE = {
+  live:   { bg: 'rgba(239,68,68,0.1)',   color: '#F87171', border: 'rgba(239,68,68,0.25)' },
+  gold:   { bg: 'rgba(245,158,11,0.1)',  color: '#F59E0B', border: 'rgba(245,158,11,0.25)' },
+  silver: { bg: 'rgba(148,163,184,0.1)', color: '#94A3B8', border: 'rgba(148,163,184,0.25)' },
+};
+
 export default function FeaturedProject({ project, index }) {
+  const bs = BADGE_STYLE[project.badgeType] || BADGE_STYLE.silver;
   return (
     <motion.div
-      className="glass-card p-8 flex flex-col gap-5 group"
-      style={{ borderTop: '3px solid rgba(145,94,255,0.6)' }}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.12, duration: 0.6 }}
-      viewport={{ once: true, margin: '-50px' }}
-      whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(145,94,255,0.25)' }}
+      className="card p-7 flex flex-col gap-5 group"
+      style={{ borderTop: '2px solid #3B82F6' }}
+      initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.5 }} viewport={{ once: true }}
+      whileHover={{ y: -4, borderColor: '#60A5FA', transition: { duration: 0.15 } }}
     >
-      <div className="flex items-center justify-between flex-wrap gap-3">
-        <span
-          className="inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full"
-          style={{
-            background: project.badge.includes('🏆') ? 'rgba(245,158,11,0.15)' : 'rgba(239,68,68,0.15)',
-            color: project.badge.includes('🏆') ? '#F59E0B' : '#EF4444',
-            border: `1px solid ${project.badge.includes('🏆') ? 'rgba(245,158,11,0.4)' : 'rgba(239,68,68,0.4)'}`,
-          }}
-        >
+      <div className="flex items-start justify-between flex-wrap gap-3">
+        <span className="text-xs font-mono px-2.5 py-1 rounded-full border"
+          style={{ background: bs.bg, color: bs.color, borderColor: bs.border }}>
           {project.badge}
         </span>
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1 text-xs font-mono transition-colors"
-          style={{ color: '#AAB4C8' }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = '#915EFF')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#AAB4C8')}
-        >
+        <a href={project.github} target="_blank" rel="noopener noreferrer"
+          className="text-xs font-mono transition-colors"
+          style={{ color: '#3F3F46' }}
+          onMouseEnter={e => e.currentTarget.style.color='#FAFAFA'}
+          onMouseLeave={e => e.currentTarget.style.color='#3F3F46'}>
           GitHub ↗
         </a>
       </div>
 
-      <h3 className="font-display font-extrabold text-xl md:text-2xl text-white">{project.title}</h3>
-
-      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#AAB4C8' }}>
-        {project.description}
-      </p>
+      <h3 className="font-display font-extrabold text-xl text-white">{project.title}</h3>
+      <p className="text-sm leading-relaxed" style={{ color: '#71717A' }}>{project.description}</p>
 
       {project.stats && (
-        <div className="flex flex-wrap gap-3">
-          {project.stats.map((stat) => (
-            <span
-              key={stat}
-              className="text-xs font-mono px-3 py-1.5 rounded"
-              style={{
-                background: 'rgba(0,217,255,0.08)',
-                color: '#00D9FF',
-                border: '1px solid rgba(0,217,255,0.2)',
-              }}
-            >
-              {stat}
+        <div className="flex flex-wrap gap-2">
+          {project.stats.map(s => (
+            <span key={s} className="text-xs font-mono px-2.5 py-1 rounded border"
+              style={{ background: 'rgba(52,211,153,0.06)', color: '#34D399', borderColor: 'rgba(52,211,153,0.2)' }}>
+              {s}
             </span>
           ))}
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2">
-        {project.tech.map((t) => (
-          <span key={t} className="tech-chip">{t}</span>
-        ))}
+      <div className="flex flex-wrap gap-1.5">
+        {project.tech.map(t => <span key={t} className="chip">{t}</span>)}
       </div>
-
-      <motion.button
-        className="mt-auto flex items-center gap-2 text-sm font-semibold w-fit"
-        style={{ color: '#915EFF' }}
-        whileHover={{ x: 4 }}
-        transition={{ duration: 0.15 }}
-      >
-        <span>→ View Project</span>
-      </motion.button>
     </motion.div>
   );
 }

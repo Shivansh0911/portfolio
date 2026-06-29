@@ -4,115 +4,61 @@ import HeroText from './HeroText';
 
 const Hero3D = lazy(() => import('./Hero3D'));
 
-function AnimatedGradientBg() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <motion.div
-        className="absolute rounded-full"
-        style={{
-          width: 600,
-          height: 600,
-          background: 'radial-gradient(circle, rgba(145,94,255,0.15) 0%, transparent 70%)',
-          filter: 'blur(60px)',
-          top: -100,
-          left: -100,
-        }}
-        animate={{ x: [0, 80, -40, 0], y: [0, -60, 40, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute rounded-full"
-        style={{
-          width: 500,
-          height: 500,
-          background: 'radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)',
-          filter: 'blur(80px)',
-          bottom: -100,
-          right: -100,
-        }}
-        animate={{ x: [0, -60, 40, 0], y: [0, 60, -40, 0] }}
-        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut', delay: 5 }}
-      />
-    </div>
-  );
-}
-
-function MobileGradientCanvas() {
-  return (
-    <div
-      className="w-full h-64 rounded-2xl relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, rgba(145,94,255,0.2), rgba(0,217,255,0.1))' }}
-    >
-      <motion.div
-        className="absolute inset-0 rounded-2xl"
-        style={{
-          background: 'conic-gradient(from 0deg, #915EFF22, #00D9FF22, #915EFF22)',
-        }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-      />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="font-display font-extrabold text-8xl gradient-text opacity-30">SSO</span>
-      </div>
-    </div>
-  );
-}
-
 export default function Hero() {
   const mousePos = useRef({ x: 0, y: 0 });
 
-  const scrollToWork = () => {
-    const el = document.getElementById('projects');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <section
-      className="relative min-h-screen flex items-center grid-bg"
+      className="relative min-h-screen flex items-center"
+      style={{ background: '#09090B' }}
       onMouseMove={(e) => { mousePos.current = { x: e.clientX, y: e.clientY }; }}
     >
-      <AnimatedGradientBg />
+      {/* Subtle radial glow — very restrained */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div style={{
+          position: 'absolute', top: '-20%', right: '10%',
+          width: 500, height: 500,
+          background: 'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 65%)',
+          filter: 'blur(40px)',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-10%', left: '5%',
+          width: 350, height: 350,
+          background: 'radial-gradient(circle, rgba(52,211,153,0.05) 0%, transparent 65%)',
+          filter: 'blur(40px)',
+        }} />
+      </div>
 
-      <div className="container mx-auto px-6 md:px-12 pt-24 pb-16 z-10 relative">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
-          <div className="w-full lg:w-[60%]">
-            <HeroText onScrollToWork={scrollToWork} />
+      <div className="container mx-auto px-6 md:px-12 pt-24 pb-16 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+
+          <div className="w-full lg:w-[58%]">
+            <HeroText onScrollToWork={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} />
           </div>
 
-          <div className="w-full lg:w-[40%] h-[400px] lg:h-[550px]">
+          <div className="w-full lg:w-[42%] h-[380px] lg:h-[520px]">
             <div className="hidden sm:block w-full h-full">
-              <Suspense
-                fallback={
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div
-                      className="w-32 h-32 rounded-full animate-pulse"
-                      style={{ background: 'rgba(145,94,255,0.2)' }}
-                    />
-                  </div>
-                }
-              >
+              <Suspense fallback={
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full border border-blue-500/20 animate-pulse" style={{ background: 'rgba(59,130,246,0.05)' }} />
+                </div>
+              }>
                 <Hero3D mousePos={mousePos} />
               </Suspense>
             </div>
-            <div className="sm:hidden w-full h-full flex items-center justify-center">
-              <MobileGradientCanvas />
+            <div className="sm:hidden w-full h-48 rounded-2xl border flex items-center justify-center"
+              style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(59,130,246,0.04)' }}>
+              <span className="font-display font-extrabold text-6xl" style={{ color: 'rgba(59,130,246,0.2)' }}>SSO</span>
             </div>
           </div>
         </div>
 
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.5 }}
-        >
-          <span className="text-xs font-mono" style={{ color: '#6B7280' }}>scroll</span>
-          <motion.div
-            className="w-[1px] h-8"
-            style={{ background: 'linear-gradient(180deg, #915EFF, transparent)' }}
-            animate={{ scaleY: [1, 0.5, 1], opacity: [1, 0.4, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
+        {/* Scroll indicator */}
+        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.4 }}>
+          <span className="text-xs font-mono" style={{ color: '#3F3F46' }}>scroll</span>
+          <motion.div className="w-px h-8" style={{ background: 'linear-gradient(180deg, #3B82F6, transparent)' }}
+            animate={{ scaleY: [1, 0.4, 1], opacity: [1, 0.3, 1] }} transition={{ duration: 1.5, repeat: Infinity }} />
         </motion.div>
       </div>
     </section>

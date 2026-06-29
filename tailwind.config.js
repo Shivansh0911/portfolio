@@ -4,29 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#050816',
-        primary: '#915EFF',
-        secondary: '#00D9FF',
-        accent: '#FF6B35',
-        gold: '#F59E0B',
-        surface: '#0F0F23',
-        surface2: '#151530',
-        muted: '#AAB4C8',
+        bg: '#09090B',
+        surface: '#111113',
+        surface2: '#18181B',
+        text: '#FAFAFA',
+        muted: '#71717A',
+        blue: '#3B82F6',
+        'blue-bright': '#60A5FA',
+        amber: '#F59E0B',
+        green: '#22C55E',
+        border: 'rgba(255,255,255,0.08)',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
-      backgroundImage: {
-        'grid-pattern':
-          'linear-gradient(rgba(145,94,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(145,94,255,0.05) 1px, transparent 1px)',
-      },
-      backgroundSize: {
-        grid: '50px 50px',
-      },
       animation: {
-        'spin-slow': 'spin 8s linear infinite',
         shimmer: 'shimmer 2.5s linear infinite',
         float: 'float 6s ease-in-out infinite',
       },
@@ -37,7 +31,7 @@ export default {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-16px)' },
         },
       },
     },

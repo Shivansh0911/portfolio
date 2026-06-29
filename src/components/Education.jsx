@@ -1,67 +1,34 @@
 import { motion } from 'framer-motion';
 import { EDUCATION } from '../constants/data';
 
-const reveal = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
-  viewport: { once: true, margin: '-100px' },
-};
+const rev = { initial:{opacity:0,y:40}, whileInView:{opacity:1,y:0}, transition:{duration:0.55,ease:[0.25,0.46,0.45,0.94]}, viewport:{once:true,margin:'-80px'} };
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 px-6 md:px-12 relative">
+    <section id="education" className="py-24 px-6 md:px-12" style={{ background: '#09090B' }}>
+      <div className="divider mb-16" />
       <div className="container mx-auto max-w-3xl">
-        <motion.div {...reveal} className="mb-16 text-center">
-          <span className="font-mono text-sm" style={{ color: '#915EFF' }}>03. education</span>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl mt-2">
-            Academic <span className="gradient-text">Background</span>
-          </h2>
+        <motion.div {...rev} className="mb-14">
+          <p className="section-label mb-2">03 — Education</p>
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white">Academic background</h2>
         </motion.div>
 
-        <div className="relative">
-          <div
-            className="absolute left-6 top-0 bottom-0 w-[2px] timeline-line"
-          />
-
-          <div className="flex flex-col gap-8 pl-16">
-            {EDUCATION.map((edu, i) => (
-              <motion.div
-                key={edu.institution}
-                {...reveal}
-                transition={{ ...reveal.transition, delay: i * 0.12 }}
-                className="relative"
-              >
-                <div
-                  className="absolute -left-[46px] top-4 w-4 h-4 rounded-full border-2 z-10"
-                  style={{ background: '#915EFF', borderColor: '#050816', boxShadow: '0 0 10px rgba(145,94,255,0.6)' }}
-                />
-
-                <div
-                  className="glass-card p-6 hover:-translate-y-1 transition-transform"
-                  style={{ borderLeft: '3px solid rgba(145,94,255,0.5)' }}
-                >
-                  <div className="flex items-start justify-between flex-wrap gap-2">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-2xl">{edu.icon}</span>
-                        <h3 className="font-display font-bold text-lg text-white">{edu.institution}</h3>
-                      </div>
-                      <p className="text-sm" style={{ color: '#AAB4C8' }}>{edu.degree}</p>
-                    </div>
-                    <span className="font-mono text-xs mt-1" style={{ color: '#915EFF' }}>{edu.period}</span>
-                  </div>
-
-                  {edu.note && (
-                    <p className="mt-3 text-sm font-mono" style={{ color: '#00D9FF' }}>{edu.note}</p>
-                  )}
-                  {edu.highlight && (
-                    <p className="mt-2 text-sm" style={{ color: '#F59E0B' }}>{edu.highlight}</p>
-                  )}
+        <div className="flex flex-col gap-4">
+          {EDUCATION.map((e, i) => (
+            <motion.div key={e.institution} {...rev} transition={{ ...rev.transition, delay: i * 0.08 }}
+              className="card p-5 flex items-start gap-4 hover:-translate-y-0.5 transition-transform">
+              <span className="text-2xl mt-0.5 flex-shrink-0">{e.icon}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                  <h3 className="font-display font-bold text-sm text-white">{e.institution}</h3>
+                  <span className="font-mono text-xs flex-shrink-0" style={{ color: '#52525B' }}>{e.period}</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <p className="text-xs mt-1" style={{ color: '#71717A' }}>{e.degree}</p>
+                {e.note && <p className="text-xs mt-1 font-mono" style={{ color: '#60A5FA' }}>{e.note}</p>}
+                {e.highlight && <p className="text-xs mt-1" style={{ color: '#F59E0B' }}>{e.highlight}</p>}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

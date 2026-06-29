@@ -4,81 +4,47 @@ import gsap from 'gsap';
 export default function CustomCursor() {
   const ringRef = useRef(null);
   const dotRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
-  const pos = useRef({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
   const xTo = useRef(null);
   const yTo = useRef(null);
 
   useEffect(() => {
     if (window.innerWidth <= 768) return;
-
     const ring = ringRef.current;
     const dot = dotRef.current;
-
     xTo.current = gsap.quickTo(ring, 'x', { duration: 0.15, ease: 'power3.out' });
     yTo.current = gsap.quickTo(ring, 'y', { duration: 0.15, ease: 'power3.out' });
 
-    const onMouseMove = (e) => {
-      pos.current = { x: e.clientX, y: e.clientY };
-      xTo.current(e.clientX);
-      yTo.current(e.clientY);
+    const move = (e) => {
+      xTo.current(e.clientX); yTo.current(e.clientY);
       gsap.set(dot, { x: e.clientX, y: e.clientY });
     };
+    const over = (e) => { if (e.target.closest('a,button,[data-hover]')) setHovered(true); };
+    const out  = (e) => { if (e.target.closest('a,button,[data-hover]')) setHovered(false); };
 
-    const onMouseOver = (e) => {
-      const target = e.target.closest('a, button, [data-cursor-hover]');
-      if (target) setIsHovered(true);
-    };
-
-    const onMouseOut = (e) => {
-      const target = e.target.closest('a, button, [data-cursor-hover]');
-      if (target) setIsHovered(false);
-    };
-
-    window.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseover', onMouseOver);
-    document.addEventListener('mouseout', onMouseOut);
-
+    window.addEventListener('mousemove', move);
+    document.addEventListener('mouseover', over);
+    document.addEventListener('mouseout', out);
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseover', onMouseOver);
-      document.removeEventListener('mouseout', onMouseOut);
+      window.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseover', over);
+      document.removeEventListener('mouseout', out);
     };
   }, []);
 
-  if (typeof window !== 'undefined' && window.innerWidth <= 768) return null;
-
   return (
     <>
-      <div
-        ref={ringRef}
-        className="fixed pointer-events-none z-[9999]"
-        style={{
-          width: isHovered ? 60 : 40,
-          height: isHovered ? 60 : 40,
-          borderRadius: '50%',
-          border: `1.5px solid ${isHovered ? 'rgba(145,94,255,0.8)' : 'rgba(145,94,255,0.6)'}`,
-          background: isHovered ? 'rgba(145,94,255,0.12)' : 'transparent',
-          transform: 'translate(-50%, -50%)',
-          transition: 'width 0.2s ease, height 0.2s ease, background 0.2s ease, border 0.2s ease',
-          top: 0,
-          left: 0,
-          mixBlendMode: 'normal',
-        }}
-      />
-      <div
-        ref={dotRef}
-        className="fixed pointer-events-none z-[9999]"
-        style={{
-          width: 6,
-          height: 6,
-          borderRadius: '50%',
-          background: '#915EFF',
-          transform: 'translate(-50%, -50%)',
-          top: 0,
-          left: 0,
-        }}
-      />
+      <div ref={ringRef} className="fixed pointer-events-none z-[9999]" style={{
+        width: hovered ? 48 : 32, height: hovered ? 48 : 32, borderRadius: '50%',
+        border: '1px solid rgba(59,130,246,0.7)',
+        background: hovered ? 'rgba(59,130,246,0.1)' : 'transparent',
+        transform: 'translate(-50%,-50%)', top: 0, left: 0,
+        transition: 'width 0.15s,height 0.15s,background 0.15s',
+      }} />
+      <div ref={dotRef} className="fixed pointer-events-none z-[9999]" style={{
+        width: 4, height: 4, borderRadius: '50%', background: '#3B82F6',
+        transform: 'translate(-50%,-50%)', top: 0, left: 0,
+      }} />
     </>
   );
 }
