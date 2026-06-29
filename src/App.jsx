@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import ScrollProgress from './components/ScrollProgress';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -19,7 +20,11 @@ export default function App() {
   const lenisRef = useLenis();
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+    >
       <CustomCursor />
       <ScrollProgress />
       <Navbar lenisRef={lenisRef} />
@@ -37,6 +42,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </motion.div>
   );
 }

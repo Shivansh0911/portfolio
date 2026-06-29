@@ -95,15 +95,6 @@ export const EDUCATION = [
 
 export const FEATURED_PROJECTS = [
   {
-    title: 'Glocal — Real-Time Crowd Analytics',
-    badge: '🔴 Live · Enterprise',
-    badgeType: 'live',
-    github: 'https://github.com/ssojha0911',
-    description:
-      'Architected at PeopleSense.AI. Real-time crowd analytics for transit agencies and enterprise clients across the US. Live occupancy heatmaps, crowd-density KPIs, sub-200ms WebSocket latency. Deployed live at BITSAA Global Meet 2026.',
-    tech: ['React SPA', 'Node.js', 'Express', 'MongoDB', 'WebSockets', 'JWT', 'RBAC'],
-  },
-  {
     title: 'TradePass — AI SME Export Gateway',
     badge: '🥈 DP World Hackathon · Semi-Finalist',
     badgeType: 'silver',
@@ -112,6 +103,16 @@ export const FEATURED_PROJECTS = [
       "Led Team StackStorm at DP World National Hackathon, BITS Pilani. AI export compliance for India's 750,000+ SME exporters. NLP HS code classification (92% confidence), 4-corridor trade compliance, GLEC carbon scoring, auto-generated invoices + Scope 3 ESG reports.",
     stats: ['96/100 customs confidence', '₹1.8L savings/shipment', '4 trade corridors'],
     tech: ['React.js', 'FastAPI', 'Gemini API', 'GLEC Framework', 'Python'],
+  },
+  {
+    title: 'Origo — AI Social Platform',
+    badge: '🏆 SEEP 3.0 · 1st of 150+ startups',
+    badgeType: 'gold',
+    github: 'https://github.com/ssojha0911',
+    description:
+      'MERN stack + Python ML microservice for cosine-similarity friend-matching. Real-time social feed via Socket.io. Won 1st prize at SEEP 3.0 against 150+ competing startups.',
+    stats: ['1st of 150+ startups', 'SEEP 3.0 Winner'],
+    tech: ['React', 'Node.js', 'MongoDB', 'Python ML', 'Socket.io', 'Vector Embeddings'],
   },
 ];
 
@@ -127,14 +128,14 @@ export const PROJECTS = [
     date: 'Jun 2026',
   },
   {
-    title: 'Origo — AI Social Platform',
-    badge: '🏆 SEEP 3.0 · 1st of 150+ startups',
+    title: 'Glocal — Real-Time Crowd Analytics',
+    badge: '🏆 Student Achievement Award · BITS Pilani',
     description:
-      'MERN + Python ML microservice for cosine-similarity friend-matching. Real-time feed via Socket.io. Won 1st prize at SEEP 3.0.',
-    tech: ['MERN', 'Python ML', 'Socket.io', 'Vector Embeddings'],
+      'Built at PeopleSense.AI (US). Real-time crowd analytics platform — live occupancy heatmaps, WebSocket sensor ingestion, sub-200ms latency. Deployed at BITSAA Global Meet 2026.',
+    tech: ['React', 'Node.js', 'MongoDB', 'WebSockets', 'JWT', 'RBAC'],
     live: null,
     github: 'https://github.com/ssojha0911',
-    date: 'Sep 2025',
+    date: 'Jan 2026',
   },
   {
     title: 'DhanMitr — Credit Scoring Platform',

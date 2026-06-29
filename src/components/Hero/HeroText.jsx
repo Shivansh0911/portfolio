@@ -54,13 +54,19 @@ function Scramble() {
   return <span ref={ref} className="font-mono" style={{ color: '#FBBF24' }}>{HERO_ROLES[0]}</span>;
 }
 
-const nameLetters = 'SHIVANSH SHEKHER OJHA'.split('');
-const container = { hidden: {}, show: { transition: { staggerChildren: 0.03, delayChildren: 0.15 } } };
-const letter = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' } } };
+const nameWords = ['SHIVANSH', 'SHEKHER', 'OJHA'];
+const wordVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+const wordItem = {
+  hidden: { opacity: 0, y: 32, skewY: 4 },
+  show: { opacity: 1, y: 0, skewY: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] } },
+};
 
 export default function HeroText({ onScrollToWork }) {
   return (
-    <div className="flex flex-col gap-6 z-10">
+    <div className="flex flex-col gap-5 z-10">
 
       {/* Status pill */}
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
@@ -71,29 +77,38 @@ export default function HeroText({ onScrollToWork }) {
         </span>
       </motion.div>
 
-      {/* Name */}
+      {/* Name — one word per line, never wraps mid-word */}
       <motion.div
-        className="font-display font-extrabold leading-none tracking-tight overflow-hidden"
-        style={{ fontSize: 'clamp(2.6rem,6.5vw,5.2rem)' }}
-        variants={container} initial="hidden" animate="show"
+        className="flex flex-col leading-none tracking-tight"
+        variants={wordVariants} initial="hidden" animate="show"
+        style={{ overflow: 'hidden' }}
       >
-        {nameLetters.map((l, i) => (
-          <motion.span key={i} variants={letter} className="inline-block"
-            style={{ color: l === ' ' ? 'transparent' : '#FAFAFA', whiteSpace: l === ' ' ? 'pre' : 'normal' }}>
-            {l === ' ' ? ' ' : l}
-          </motion.span>
+        {nameWords.map((word, i) => (
+          <div key={word} style={{ overflow: 'hidden' }}>
+            <motion.span
+              variants={wordItem}
+              className="block font-display font-extrabold text-white whitespace-nowrap"
+              style={{
+                fontSize: 'clamp(2.4rem, 8.5vw, 5.5rem)',
+                lineHeight: 1.0,
+                color: i === 1 ? '#FAFAFA' : i === 2 ? '#A1A1AA' : '#FAFAFA',
+              }}
+            >
+              {word}
+            </motion.span>
+          </div>
         ))}
       </motion.div>
 
       {/* Role scramble */}
-      <motion.div className="text-lg md:text-xl h-7" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }}>
+      <motion.div className="text-base md:text-lg h-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }}>
         <Scramble />
       </motion.div>
 
       {/* Bio */}
-      <motion.div className="flex flex-col gap-1.5 text-sm md:text-base leading-relaxed max-w-lg"
+      <motion.div className="flex flex-col gap-1 text-sm leading-relaxed max-w-lg"
         style={{ color: '#71717A' }}
-        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.4 }}>
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.4 }}>
         <p>Building full-stack platforms &amp; ML-powered products.</p>
         <p>
           <span style={{ color: '#FAFAFA' }}>EEE Junior @ BITS Pilani</span>
@@ -107,7 +122,7 @@ export default function HeroText({ onScrollToWork }) {
 
       {/* Buttons */}
       <motion.div className="flex flex-wrap gap-3"
-        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.35 }}>
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.35 }}>
         <button onClick={onScrollToWork} className="btn-primary">
           View My Work →
         </button>
@@ -117,11 +132,11 @@ export default function HeroText({ onScrollToWork }) {
       </motion.div>
 
       {/* Quick stat row */}
-      <motion.div className="flex gap-6 pt-2"
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 0.4 }}>
+      <motion.div className="flex gap-8 pt-1"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65, duration: 0.4 }}>
         {[['8+','Projects'],['4','Hackathon wins'],['10+','MUN awards']].map(([n, l]) => (
           <div key={l}>
-            <p className="font-display font-bold text-lg text-white">{n}</p>
+            <p className="font-display font-bold text-xl text-white">{n}</p>
             <p className="text-xs" style={{ color: '#52525B' }}>{l}</p>
           </div>
         ))}
