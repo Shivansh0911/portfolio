@@ -18,7 +18,7 @@ export default function Hero() {
         <div style={{
           position: 'absolute', top: '-20%', right: '10%',
           width: 500, height: 500,
-          background: 'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(245,158,11,0.07) 0%, transparent 65%)',
           filter: 'blur(40px)',
         }} />
         <div style={{
@@ -40,15 +40,15 @@ export default function Hero() {
             <div className="hidden sm:block w-full h-full">
               <Suspense fallback={
                 <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full border border-blue-500/20 animate-pulse" style={{ background: 'rgba(59,130,246,0.05)' }} />
+                  <div className="w-24 h-24 rounded-full border border-amber-500/20 animate-pulse" style={{ background: 'rgba(245,158,11,0.05)' }} />
                 </div>
               }>
                 <Hero3D mousePos={mousePos} />
               </Suspense>
             </div>
             <div className="sm:hidden w-full h-48 rounded-2xl border flex items-center justify-center"
-              style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(59,130,246,0.04)' }}>
-              <span className="font-display font-extrabold text-6xl" style={{ color: 'rgba(59,130,246,0.2)' }}>SSO</span>
+              style={{ borderColor: 'rgba(255,255,255,0.06)', background: 'rgba(245,158,11,0.04)' }}>
+              <span className="font-display font-extrabold text-6xl" style={{ color: 'rgba(245,158,11,0.2)' }}>SSO</span>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function Hero() {
         <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.4 }}>
           <span className="text-xs font-mono" style={{ color: '#3F3F46' }}>scroll</span>
-          <motion.div className="w-px h-8" style={{ background: 'linear-gradient(180deg, #3B82F6, transparent)' }}
+          <motion.div className="w-px h-8" style={{ background: 'linear-gradient(180deg, #F59E0B, transparent)' }}
             animate={{ scaleY: [1, 0.4, 1], opacity: [1, 0.3, 1] }} transition={{ duration: 1.5, repeat: Infinity }} />
         </motion.div>
       </div>

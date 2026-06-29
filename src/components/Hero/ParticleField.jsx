@@ -23,7 +23,7 @@ export default function ParticleField({ count = 120 }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.012} color="#60A5FA" transparent opacity={0.5} sizeAttenuation />
+      <pointsMaterial size={0.012} color="#FBBF24" transparent opacity={0.35} sizeAttenuation />
     </points>
   );
 }

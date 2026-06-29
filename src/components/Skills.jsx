@@ -29,9 +29,9 @@ export default function Skills() {
             <button key={f} onClick={() => setActive(f)}
               className="px-3 py-1 rounded text-xs font-mono transition-all"
               style={{
-                background: active===f ? 'rgba(59,130,246,0.15)' : 'rgba(255,255,255,0.03)',
-                color: active===f ? '#60A5FA' : '#52525B',
-                border: `1px solid ${active===f ? 'rgba(59,130,246,0.4)' : 'rgba(255,255,255,0.06)'}`,
+                background: active===f ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.03)',
+                color: active===f ? '#FBBF24' : '#52525B',
+                border: `1px solid ${active===f ? 'rgba(245,158,11,0.4)' : 'rgba(255,255,255,0.06)'}`,
               }}>
               {f}
             </button>
@@ -51,11 +51,11 @@ export default function Skills() {
                       transition={{ delay: gi*0.04 + i*0.03 }}
                       className="px-3 py-1.5 rounded text-xs font-medium border cursor-default transition-all"
                       style={{
-                        background: HIGHLIGHT.has(group.filter) ? 'rgba(59,130,246,0.06)' : 'rgba(255,255,255,0.03)',
+                        background: HIGHLIGHT.has(group.filter) ? 'rgba(245,158,11,0.06)' : 'rgba(255,255,255,0.03)',
                         color: HIGHLIGHT.has(group.filter) ? '#93C5FD' : '#71717A',
-                        borderColor: HIGHLIGHT.has(group.filter) ? 'rgba(59,130,246,0.2)' : 'rgba(255,255,255,0.07)',
+                        borderColor: HIGHLIGHT.has(group.filter) ? 'rgba(245,158,11,0.2)' : 'rgba(255,255,255,0.07)',
                       }}
-                      whileHover={{ color: '#FAFAFA', borderColor: 'rgba(59,130,246,0.5)', background: 'rgba(59,130,246,0.1)' }}>
+                      whileHover={{ color: '#FAFAFA', borderColor: 'rgba(245,158,11,0.5)', background: 'rgba(245,158,11,0.1)' }}>
                       {skill}
                     </motion.span>
                   ))}

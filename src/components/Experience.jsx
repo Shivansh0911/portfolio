@@ -20,14 +20,14 @@ export default function Experience() {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
                     <h3 className="font-display font-bold text-base text-white">{exp.title}</h3>
-                    <p className="text-sm mt-0.5" style={{ color: '#60A5FA' }}>
+                    <p className="text-sm mt-0.5" style={{ color: '#FBBF24' }}>
                       {exp.company} {exp.flag}
                       {exp.location && <span style={{ color: '#3F3F46' }}> · {exp.location}</span>}
                     </p>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <span className="font-mono text-xs" style={{ color: '#52525B' }}>{exp.period}</span>
-                    <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ background: 'rgba(59,130,246,0.1)', color: '#60A5FA' }}>
+                    <span className="font-mono text-xs px-2 py-0.5 rounded" style={{ background: 'rgba(245,158,11,0.1)', color: '#FBBF24' }}>
                       {exp.duration}
                     </span>
                   </div>
@@ -36,7 +36,7 @@ export default function Experience() {
                 <ul className="flex flex-col gap-2 mb-5">
                   {exp.bullets.map((b, j) => (
                     <li key={j} className="flex items-start gap-2.5 text-sm" style={{ color: '#71717A' }}>
-                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#3B82F6' }} />
+                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ background: '#F59E0B' }} />
                       {b}
                     </li>
                   ))}

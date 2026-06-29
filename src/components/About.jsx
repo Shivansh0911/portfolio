@@ -58,19 +58,19 @@ export default function About() {
           <motion.div {...rev} transition={{ ...rev.transition, delay: 0.1 }} className="flex flex-col gap-5 lg:w-[64%]">
             <div className="flex flex-col gap-3 text-sm leading-relaxed" style={{ color: '#71717A' }}>
               <p>I'm a B.Tech EEE student at <span className="text-white font-medium">BITS Pilani, Hyderabad Campus</span> — passionate about building scalable full-stack systems and exploring applied ML.</p>
-              <p>Currently at <span style={{ color: '#60A5FA' }} className="font-medium">PeopleSense.AI</span>, architecting Glocal — a real-time crowd analytics platform serving enterprise clients and transit agencies across the US. Deployed live at BITSAA Global Meet 2026, for which I received the <span className="text-white">Student Achievement Award</span> from BITS Pilani's Director.</p>
+              <p>Currently at <span style={{ color: '#FBBF24' }} className="font-medium">PeopleSense.AI</span>, architecting Glocal — a real-time crowd analytics platform serving enterprise clients and transit agencies across the US. Deployed live at BITSAA Global Meet 2026, for which I received the <span className="text-white">Student Achievement Award</span> from BITS Pilani's Director.</p>
               <p>I've won national hackathons, led web development for ATMOS and TEDx BITS Pilani, and represented ideas on the international MUN stage as both delegate and chair.</p>
               <p>I believe in shipping things that work — and in conversations that spark change.</p>
             </div>
 
             <div className="mt-2">
-              <p className="text-xs font-mono mb-4" style={{ color: '#3B82F6' }}>// Technologies I work with</p>
+              <p className="text-xs font-mono mb-4" style={{ color: '#F59E0B' }}>// Technologies I work with</p>
               <div className="grid grid-cols-2 gap-y-1.5 gap-x-4">
                 {ABOUT_TECH.map((t, i) => (
                   <motion.div key={t} className="flex items-center gap-2 text-xs font-mono" style={{ color: '#71717A' }}
                     initial={{ opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.04 }} viewport={{ once: true }}>
-                    <span style={{ color: '#3B82F6' }}>→</span> {t}
+                    <span style={{ color: '#F59E0B' }}>→</span> {t}
                   </motion.div>
                 ))}
               </div>

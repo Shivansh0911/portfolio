@@ -20,7 +20,7 @@ export default function Projects() {
         </motion.p>
 
         <motion.div {...rev} transition={{ ...rev.transition, delay: 0.08 }} className="mb-14">
-          <p className="text-xs font-mono mb-5" style={{ color: '#3B82F6' }}>// Featured</p>
+          <p className="text-xs font-mono mb-5" style={{ color: '#F59E0B' }}>// Featured</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {FEATURED_PROJECTS.map((p, i) => <FeaturedProject key={p.title} project={p} index={i} />)}
           </div>

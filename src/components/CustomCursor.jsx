@@ -36,13 +36,13 @@ export default function CustomCursor() {
     <>
       <div ref={ringRef} className="fixed pointer-events-none z-[9999]" style={{
         width: hovered ? 48 : 32, height: hovered ? 48 : 32, borderRadius: '50%',
-        border: '1px solid rgba(59,130,246,0.7)',
-        background: hovered ? 'rgba(59,130,246,0.1)' : 'transparent',
+        border: '1px solid rgba(245,158,11,0.7)',
+        background: hovered ? 'rgba(245,158,11,0.1)' : 'transparent',
         transform: 'translate(-50%,-50%)', top: 0, left: 0,
         transition: 'width 0.15s,height 0.15s,background 0.15s',
       }} />
       <div ref={dotRef} className="fixed pointer-events-none z-[9999]" style={{
-        width: 4, height: 4, borderRadius: '50%', background: '#3B82F6',
+        width: 4, height: 4, borderRadius: '50%', background: '#F59E0B',
         transform: 'translate(-50%,-50%)', top: 0, left: 0,
       }} />
     </>

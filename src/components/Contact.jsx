@@ -27,9 +27,9 @@ function ContactRow({ label, value, href, copyValue }) {
           <button onClick={handleCopy}
             className="text-xs font-mono px-3 py-1.5 rounded border transition-all"
             style={{
-              color: copied ? '#22C55E' : '#3B82F6',
-              borderColor: copied ? 'rgba(34,197,94,0.3)' : 'rgba(59,130,246,0.25)',
-              background: copied ? 'rgba(34,197,94,0.07)' : 'rgba(59,130,246,0.06)',
+              color: copied ? '#22C55E' : '#F59E0B',
+              borderColor: copied ? 'rgba(34,197,94,0.3)' : 'rgba(245,158,11,0.25)',
+              background: copied ? 'rgba(34,197,94,0.07)' : 'rgba(245,158,11,0.06)',
             }}>
             {copied ? '✓ Copied' : 'Copy'}
           </button>
@@ -68,7 +68,7 @@ export default function Contact() {
           <ProfilePhoto size={64} />
           <div>
             <h3 className="font-display font-bold text-base text-white">Shivansh Shekher Ojha</h3>
-            <p className="text-xs mt-0.5 font-mono" style={{ color: '#3B82F6' }}>EEE · BITS Pilani Hyderabad</p>
+            <p className="text-xs mt-0.5 font-mono" style={{ color: '#F59E0B' }}>EEE · BITS Pilani Hyderabad</p>
           </div>
         </motion.div>
 

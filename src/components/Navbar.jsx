@@ -63,7 +63,7 @@ export default function Navbar({ lenisRef }) {
         transition={{ delay: 0.1, duration: 0.4, ease: 'easeOut' }}
       >
         <button onClick={() => go('#')} className="font-display font-extrabold text-xl text-white tracking-tight">
-          SSO<span style={{ color: '#3B82F6' }}>.</span>
+          SSO<span style={{ color: '#F59E0B' }}>.</span>
         </button>
 
         <div className="hidden md:flex items-center gap-7">
@@ -79,9 +79,9 @@ export default function Navbar({ lenisRef }) {
                 {link.label}
                 <span
                   className="absolute -bottom-0.5 left-0 h-px transition-all duration-200"
-                  style={{ background: '#3B82F6', width: active === id ? '100%' : '0%' }}
+                  style={{ background: '#F59E0B', width: active === id ? '100%' : '0%' }}
                 />
-                <span className="absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-200" style={{ background: '#3B82F6' }} />
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 group-hover:w-full transition-all duration-200" style={{ background: '#F59E0B' }} />
               </button>
             );
           })}

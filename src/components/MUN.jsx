@@ -3,7 +3,7 @@ import { MUN_DELEGATE, MUN_CHAIR } from '../constants/data';
 
 const AWARD_COLOR = {
   best:        { color: '#F59E0B', label: 'Best Delegate'       },
-  outstanding: { color: '#60A5FA', label: 'Outstanding Delegate' },
+  outstanding: { color: '#FBBF24', label: 'Outstanding Delegate' },
   special:     { color: '#A78BFA', label: 'Special Mention'     },
   honourable:  { color: '#34D399', label: 'Honourable Mention'  },
 };
@@ -29,7 +29,7 @@ export default function MUN() {
 
           {/* Delegate awards */}
           <motion.div {...rev} transition={{ ...rev.transition, delay: 0.08 }} className="flex-1">
-            <p className="text-xs font-mono mb-5 uppercase tracking-widest" style={{ color: '#3B82F6' }}>
+            <p className="text-xs font-mono mb-5 uppercase tracking-widest" style={{ color: '#F59E0B' }}>
               // As delegate
             </p>
             <div className="flex flex-col">
@@ -68,7 +68,7 @@ export default function MUN() {
                   className="card p-4 flex gap-3">
                   <span className="text-base flex-shrink-0 mt-0.5">{chair.icon}</span>
                   <div className="min-w-0">
-                    <p className="text-xs font-mono mb-0.5" style={{ color: '#3B82F6' }}>{chair.role}</p>
+                    <p className="text-xs font-mono mb-0.5" style={{ color: '#F59E0B' }}>{chair.role}</p>
                     <p className="text-sm text-white">{chair.conference}</p>
                     {chair.committee && (
                       <p className="text-xs" style={{ color: '#52525B' }}>{chair.committee}</p>

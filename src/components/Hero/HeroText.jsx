@@ -9,7 +9,7 @@ export function ProfilePhoto({ size = 160 }) {
   return (
     <div className="relative flex-shrink-0" style={{ width: size, height: size }}>
       <div className="absolute inset-0 rounded-full" style={{
-        background: 'conic-gradient(from 0deg, #3B82F6, #34D399, #3B82F6)',
+        background: 'conic-gradient(from 0deg, #F59E0B, #34D399, #F59E0B)',
         padding: 2, borderRadius: '50%', animation: 'spin-slow 10s linear infinite',
       }}>
         <div className="w-full h-full rounded-full" style={{ background: '#09090B' }} />
@@ -17,7 +17,7 @@ export function ProfilePhoto({ size = 160 }) {
       <div className="absolute rounded-full overflow-hidden" style={{ inset: 3 }}>
         {!err
           ? <img src={PHOTO_URL} alt="Shivansh" className="w-full h-full object-cover object-top" onError={() => setErr(true)} loading="eager" />
-          : <div className="w-full h-full flex items-center justify-center font-display font-extrabold text-white text-3xl" style={{ background: 'linear-gradient(135deg,#3B82F6,#34D399)' }}>SSO</div>
+          : <div className="w-full h-full flex items-center justify-center font-display font-extrabold text-white text-3xl" style={{ background: 'linear-gradient(135deg,#F59E0B,#34D399)' }}>SSO</div>
         }
       </div>
     </div>
@@ -51,7 +51,7 @@ function Scramble() {
     return () => { clearInterval(interval); clearTimeout(timeout); };
   }, []);
 
-  return <span ref={ref} className="font-mono" style={{ color: '#60A5FA' }}>{HERO_ROLES[0]}</span>;
+  return <span ref={ref} className="font-mono" style={{ color: '#FBBF24' }}>{HERO_ROLES[0]}</span>;
 }
 
 const nameLetters = 'SHIVANSH SHEKHER OJHA'.split('');
@@ -98,7 +98,7 @@ export default function HeroText({ onScrollToWork }) {
         <p>
           <span style={{ color: '#FAFAFA' }}>EEE Junior @ BITS Pilani</span>
           <span style={{ color: '#3F3F46' }}> · </span>
-          <span style={{ color: '#60A5FA' }}>Software Engineer @ PeopleSense.AI</span>
+          <span style={{ color: '#FBBF24' }}>Software Engineer @ PeopleSense.AI</span>
         </p>
         <p className="text-xs font-mono" style={{ color: '#3F3F46' }}>
           Full Stack · ML · SEEP 2025 Winner · Student Achievement Award

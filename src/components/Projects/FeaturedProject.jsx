@@ -11,10 +11,10 @@ export default function FeaturedProject({ project, index }) {
   return (
     <motion.div
       className="card p-7 flex flex-col gap-5 group"
-      style={{ borderTop: '2px solid #3B82F6' }}
+      style={{ borderTop: '2px solid #F59E0B' }}
       initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }} viewport={{ once: true }}
-      whileHover={{ y: -4, borderColor: '#60A5FA', transition: { duration: 0.15 } }}
+      whileHover={{ y: -4, borderColor: '#FBBF24', transition: { duration: 0.15 } }}
     >
       <div className="flex items-start justify-between flex-wrap gap-3">
         <span className="text-xs font-mono px-2.5 py-1 rounded-full border"

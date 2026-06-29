@@ -383,8 +383,8 @@ export const HOBBIES = [
     subtitle: 'Comedy is the genre',
     desc: 'Always up for something that makes you think while making you laugh.',
     tags: ['Comedy', 'Netflix', 'Classics'],
-    accent: '#60A5FA',
-    border: 'rgba(96, 165, 250, 0.2)',
-    bg: 'rgba(96, 165, 250, 0.04)',
+    accent: '#818CF8',
+    border: 'rgba(129, 140, 248, 0.2)',
+    bg: 'rgba(129, 140, 248, 0.04)',
   },
 ];

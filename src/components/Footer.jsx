@@ -40,8 +40,8 @@ export default function Footer() {
     <footer className="py-10 px-6" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: '#09090B' }}>
       <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-5">
 
-        <span className="font-display font-extrabold text-lg" style={{ color: '#3B82F6' }}>
-          SSO<span style={{ color: '#3B82F6' }}>.</span>
+        <span className="font-display font-extrabold text-lg" style={{ color: '#F59E0B' }}>
+          SSO<span style={{ color: '#F59E0B' }}>.</span>
         </span>
 
         <p className="text-xs font-mono text-center" style={{ color: '#3F3F46' }}>
@@ -55,7 +55,7 @@ export default function Footer() {
               rel="noopener noreferrer" aria-label={l.label}
               className="transition-colors duration-150"
               style={{ color: '#3F3F46' }}
-              onMouseEnter={e => e.currentTarget.style.color = '#60A5FA'}
+              onMouseEnter={e => e.currentTarget.style.color = '#FBBF24'}
               onMouseLeave={e => e.currentTarget.style.color = '#3F3F46'}>
               {l.icon}
             </a>

@@ -24,7 +24,7 @@ export default function Education() {
                   <span className="font-mono text-xs flex-shrink-0" style={{ color: '#52525B' }}>{e.period}</span>
                 </div>
                 <p className="text-xs mt-1" style={{ color: '#71717A' }}>{e.degree}</p>
-                {e.note && <p className="text-xs mt-1 font-mono" style={{ color: '#60A5FA' }}>{e.note}</p>}
+                {e.note && <p className="text-xs mt-1 font-mono" style={{ color: '#FBBF24' }}>{e.note}</p>}
                 {e.highlight && <p className="text-xs mt-1" style={{ color: '#F59E0B' }}>{e.highlight}</p>}
               </div>
             </motion.div>

@@ -24,11 +24,11 @@ function TorusKnot({ mousePos }) {
     <group>
       <mesh ref={mesh}>
         <torusKnotGeometry args={[1, 0.3, 200, 32]} />
-        <meshStandardMaterial color="#1d4ed8" emissive="#3B82F6" emissiveIntensity={0.5} roughness={0.15} metalness={0.9} />
+        <meshStandardMaterial color="#92400E" emissive="#F59E0B" emissiveIntensity={0.6} roughness={0.15} metalness={0.9} />
       </mesh>
       <mesh ref={wire}>
         <torusKnotGeometry args={[1, 0.3, 200, 32]} />
-        <meshBasicMaterial color="#60A5FA" wireframe transparent opacity={0.12} />
+        <meshBasicMaterial color="#FBBF24" wireframe transparent opacity={0.12} />
       </mesh>
     </group>
   );
@@ -38,7 +38,7 @@ export default function Hero3D({ mousePos }) {
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 45 }} dpr={[1, 2]} gl={{ antialias: true, alpha: true }} style={{ background: 'transparent' }}>
       <ambientLight intensity={0.2} />
-      <pointLight position={[3, 3, 3]} color="#3B82F6" intensity={2} />
+      <pointLight position={[3, 3, 3]} color="#F59E0B" intensity={2} />
       <pointLight position={[-3, -3, -2]} color="#34D399" intensity={1.2} />
       <TorusKnot mousePos={mousePos} />
       <ParticleField count={120} />

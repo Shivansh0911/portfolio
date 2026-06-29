@@ -5,6 +5,6 @@ export default function ScrollProgress() {
   const scaleX = useScrollProgress();
   return (
     <motion.div className="fixed top-0 left-0 right-0 h-[1px] z-[9998] origin-left"
-      style={{ scaleX, background: '#3B82F6' }} />
+      style={{ scaleX, background: '#F59E0B' }} />
   );
 }
