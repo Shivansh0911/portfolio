@@ -4,7 +4,7 @@ import { ProfilePhoto } from './Hero/HeroText';
 
 const EMAIL = 'ssojha0911@gmail.com';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/shivansh-shekher-ojha/';
-const GITHUB_URL = 'https://github.com/ssojha0911';
+const GITHUB_URL = 'https://github.com/shivansh0911';
 
 const rev = { initial:{opacity:0,y:40}, whileInView:{opacity:1,y:0}, transition:{duration:0.55,ease:[0.25,0.46,0.45,0.94]}, viewport:{once:true,margin:'-80px'} };
 
@@ -75,7 +75,7 @@ export default function Contact() {
         <motion.div {...rev} transition={{ ...rev.transition, delay: 0.1 }} className="mb-10">
           <ContactRow label="Email" value={EMAIL} href={`mailto:${EMAIL}`} copyValue={EMAIL} />
           <ContactRow label="LinkedIn" value="linkedin.com/in/shivansh-shekher-ojha" href={LINKEDIN_URL} />
-          <ContactRow label="GitHub" value="github.com/ssojha0911" href={GITHUB_URL} />
+          <ContactRow label="GitHub" value="github.com/shivansh0911" href={GITHUB_URL} />
           <ContactRow label="Location" value="BITS Pilani, Hyderabad Campus · India" />
         </motion.div>
 

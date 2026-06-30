@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '../constants/data';
 
-const GITHUB = 'https://github.com/ssojha0911';
+const GITHUB = 'https://github.com/shivansh0911';
 const LINKEDIN = 'https://www.linkedin.com/in/shivansh-shekher-ojha/';
 
 const GH = () => (

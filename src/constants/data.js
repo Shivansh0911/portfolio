@@ -98,7 +98,7 @@ export const FEATURED_PROJECTS = [
     title: 'TradePass — AI SME Export Gateway',
     badge: '🥈 DP World Hackathon · Semi-Finalist',
     badgeType: 'silver',
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     description:
       "Led Team StackStorm at DP World National Hackathon, BITS Pilani. AI export compliance for India's 750,000+ SME exporters. NLP HS code classification (92% confidence), 4-corridor trade compliance, GLEC carbon scoring, auto-generated invoices + Scope 3 ESG reports.",
     stats: ['96/100 customs confidence', '₹1.8L savings/shipment', '4 trade corridors'],
@@ -108,7 +108,7 @@ export const FEATURED_PROJECTS = [
     title: 'Origo — AI Social Platform',
     badge: '🏆 SEEP 3.0 · 1st of 150+ startups',
     badgeType: 'gold',
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     description:
       'MERN stack + Python ML microservice for cosine-similarity friend-matching. Real-time social feed via Socket.io. Won 1st prize at SEEP 3.0 against 150+ competing startups.',
     stats: ['1st of 150+ startups', 'SEEP 3.0 Winner'],
@@ -124,7 +124,7 @@ export const PROJECTS = [
       'End-to-end AI-orchestrated campus placement automation using UiPath Maestro BPMN + LangChain + Groq (Llama 3). AI resume screening (0–100 vs JD), 3 RPA bots, human-in-the-loop approvals. Reduced 2-week placement drive to 48 hours.',
     tech: ['UiPath Maestro', 'LangChain', 'Groq', 'FastAPI', 'RPA'],
     live: null,
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     date: 'Jun 2026',
   },
   {
@@ -134,7 +134,7 @@ export const PROJECTS = [
       'Built at PeopleSense.AI (US). Real-time crowd analytics platform — live occupancy heatmaps, WebSocket sensor ingestion, sub-200ms latency. Deployed at BITSAA Global Meet 2026.',
     tech: ['React', 'Node.js', 'MongoDB', 'WebSockets', 'JWT', 'RBAC'],
     live: null,
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     date: 'Jan 2026',
   },
   {
@@ -144,7 +144,7 @@ export const PROJECTS = [
       'Fintech ML pipeline with XGBoost + Logistic Regression for creditworthiness assessment of low-income beneficiaries. 89% AUC, 60% reduction in manual evaluation time. Flask REST API with versioned endpoints.',
     tech: ['XGBoost', 'Logistic Regression', 'Flask', 'FastAPI', 'REST API'],
     live: null,
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     date: 'Nov 2025',
   },
   {
@@ -154,7 +154,7 @@ export const PROJECTS = [
       'Real-time campus library occupancy tracking for BITS Pilani Hyderabad. TypeScript + WebSockets + live sensor data. Area-wise availability heatmaps with sub-second update latency. Deployed during BITSAA Global Meet 2026.',
     tech: ['TypeScript', 'React', 'WebSockets', 'Computer Vision'],
     live: null,
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     date: 'Jan 2026',
   },
   {
@@ -164,7 +164,7 @@ export const PROJECTS = [
       'Real-time breach detection + threat monitoring. Award presented by Dean, BITS Pilani Hyderabad.',
     tech: ['Real-time', 'Threat Detection', 'Cyber Intelligence'],
     live: null,
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     date: 'Feb 2026',
   },
   {
@@ -174,7 +174,7 @@ export const PROJECTS = [
       'ML isoelectric point predictor. 7,500+ experimental sequences. Titration curve visualization.',
     tech: ['FastAPI', 'React', 'scikit-learn', 'Random Forest', 'Recharts'],
     live: 'https://isoelectronic-point.netlify.app',
-    github: 'https://github.com/ssojha0911',
+    github: 'https://github.com/shivansh0911',
     date: null,
   },
 ];

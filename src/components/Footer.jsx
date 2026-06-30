@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const GITHUB = 'https://github.com/ssojha0911';
+const GITHUB = 'https://github.com/shivansh0911';
 const LINKEDIN = 'https://www.linkedin.com/in/shivansh-shekher-ojha/';
 const EMAIL = 'ssojha0911@gmail.com';
 
